@@ -26,15 +26,29 @@ const Presentation: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex gap-4"
         >
-          <a
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
             href="#featuredWorks"
             className="bg-black w-[224px] h-[60px] font-semibold rounded-md py-4 px-10 text-center font-work-sans text-white"
           >
             View My Work
-          </a>
-          <button className="rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 ">
+          </motion.a>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+            className="rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 "
+          >
             Contact Me
-          </button>
+          </motion.button>
         </motion.div>
       </div>
       <div className="mx-auto drop-shadow-lg  my-24 md:mx-0 md:my-0">

@@ -12,13 +12,13 @@ export const socialMediaItems: socialMediaProps[] = [
   {
     id: 0,
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/steven-mercatante/",
+    href: "https://www.linkedin.com/in/marcelo-bracet/",
     icon: LinkedinIcon,
   },
   {
     id: 1,
     name: "Instagram",
-    href: "",
+    href: "https://www.instagram.com/_bracetmarcelo/",
     icon: InstagramIcon,
   },
 ];

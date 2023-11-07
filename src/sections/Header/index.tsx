@@ -9,12 +9,13 @@ import { socialMediaItems } from "@/data/Header/socialMediaItems";
 import { useApp } from "@/contexts/useContext";
 
 const Header: React.FC = () => {
-  const { isAboveBlackArea } = useApp();
+  const { isAboveBlackArea, setOpenMenu } = useApp();
 
   return (
     <header className="container mx-auto md:flex text-[#1B1A19] justify-between items-center border-b-black/20">
       <div className="flex items-center gap-8">
         <motion.a
+          target="_blank"
           href="/"
           className="hidden md:block uppercase font-work-sans font-extrabold text-[28px]"
           initial={{ opacity: 0, x: -100 }}
@@ -25,7 +26,12 @@ const Header: React.FC = () => {
           desenvolvedor front-end
         </motion.a>
 
-        <div className="fixed flex items-center cursor-pointer justify-center z-20 top-5 right-5 md:hidden">
+        <div
+          onClick={() => {
+            setOpenMenu(true);
+          }}
+          className="fixed flex items-center cursor-pointer justify-center z-20 top-5 right-5 md:hidden"
+        >
           <HamburgerIcon fill={isAboveBlackArea ? "#fff" : "#000"} />
         </div>
         <ul className="hidden list-none md:flex gap-8">
@@ -60,6 +66,7 @@ const Header: React.FC = () => {
       <div className="hidden lg:flex gap-6 ">
         {socialMediaItems.map((item) => (
           <motion.a
+            target="_blank"
             initial={{
               transform: "rotateY(180deg)",
               opacity: 0,

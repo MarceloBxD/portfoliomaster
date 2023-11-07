@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 const Feedbacks: React.FC = () => {
   return (
-    <section className="w-full">
+    <section id="feedbacks" className="w-full mt-[2rem]">
       <div className="container mx-auto py-[118px]">
-        <div className="flex text-center  justify-center items-center flex-col gap-2">
+        <div className="flex text-center justify-center items-center flex-col gap-2">
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}

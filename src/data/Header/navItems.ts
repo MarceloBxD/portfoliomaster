@@ -7,12 +7,12 @@ export const navItems = [
   {
     id: 1,
     name: "Work",
-    href: "/",
+    href: "#featuredWorks",
   },
   {
     id: 2,
     name: "Testimonials",
-    href: "/",
+    href: "#feedbacks",
   },
   {
     id: 3,

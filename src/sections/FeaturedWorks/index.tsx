@@ -15,27 +15,28 @@ const FeaturedWorks: React.FC = () => {
       title: "Work 1",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View more</button>,
+      cta: <button>View Github</button>,
     },
     {
       id: 2,
       title: "Work 2",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View more</button>,
+      cta: <button>View Github</button>,
     },
     {
       id: 3,
       title: "Work 3",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View more</button>,
+      cta: <button>View Github</button>,
     },
     {
       id: 4,
       title: "Work 4",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, volupt",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+      cta: <button>View Github</button>,
     },
   ];
 
@@ -63,7 +64,7 @@ const FeaturedWorks: React.FC = () => {
   }, [setIsAboveBlackArea]);
 
   return (
-    <section id="featuredWorks" className="py-2 bg-black/95">
+    <section id="featuredWorks" className="py-4 bg-black/95">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -76,23 +77,19 @@ const FeaturedWorks: React.FC = () => {
             Featured Works
           </h2>
           <button className="text-white mx-auto md:mx-0 flex items-center justify-center font-work-sans text-[20px] border-4 rounded-md border-white px-10 py-6 w-[300px] h-[60px]">
-            View more on Behance
+            View more on Linkedin
           </button>
         </motion.div>
-        <div className="mt-[60px]">
+        <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {works.map((item) => (
-            <motion.div
-              initial={{ opacity: 0, x: -300 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -300 }}
-              transition={{ duration: 1, delay: 0.2 * item.id }}
-            >
+            <motion.div className="flex-1 relative hover:flex-[2] overflow-hidden transition-all duration-300">
               <WorkCard
                 key={item.id}
                 title={item.title}
                 description={item.description}
                 cta={item.cta}
               />
+              <div className="bg-gradient-to-t z-50 absolute"></div>
             </motion.div>
           ))}
         </div>
