@@ -71,6 +71,7 @@ const WorkingExperience: React.FC = () => {
               transition={{
                 duration: 1,
               }}
+              key={project.id}
               className="hover:border-l-4 font-semibold hover:border-main-blue text-left py-1 px-6 cursor-pointer uppercase  "
             >
               <motion.h3 key={project.id} className="text-xl">
