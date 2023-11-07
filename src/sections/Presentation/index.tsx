@@ -17,7 +17,7 @@ const Presentation: React.FC = () => {
           transition={{ duration: 1 }}
           className="text-2xl text-center md:text-left md:text-4xl max-w-[70%] lg:text-6xl font-semibold"
         >
-          I'm Marcelo Bracet, a Web Developer
+          I&apos;m Marcelo Bracet, a Web Developer
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, x: -100 }}

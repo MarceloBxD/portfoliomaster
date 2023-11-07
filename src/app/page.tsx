@@ -66,6 +66,7 @@ export default function Home() {
           <div className="fixed flex gap-2 bottom-10">
             {socialMediaItems.map((item) => (
               <motion.a
+                key={item.id}
                 target="_blank"
                 initial={{
                   transform: "rotateY(180deg)",

@@ -67,6 +67,7 @@ const Header: React.FC = () => {
         {socialMediaItems.map((item) => (
           <motion.a
             target="_blank"
+            key={item.id}
             initial={{
               transform: "rotateY(180deg)",
               opacity: 0,
