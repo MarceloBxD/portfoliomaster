@@ -10,6 +10,7 @@ import { useApp } from "@/contexts/useContext";
 import CloseIcon from "@/icons/svgs/CloseIcon";
 import { navItems } from "@/data/Header/navItems";
 import { socialMediaItems } from "@/data/Header/socialMediaItems";
+import WorkingExperience from "@/sections/WorkingExperience";
 
 export default function Home() {
   const { openMenu, setOpenMenu } = useApp();
@@ -20,6 +21,7 @@ export default function Home() {
       <Presentation />
       <FeaturedWorks />
       <Feedbacks />
+      <WorkingExperience />
       {openMenu && (
         <motion.aside
           initial={{

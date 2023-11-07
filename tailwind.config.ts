@@ -18,6 +18,17 @@ const config: Config = {
         "work-sans": ["Work Sans", "sans"],
         eczar: ["Eczar", "serif"],
       },
+      fontSize: {
+        "section-title": "40px",
+        "section-subtitle": "24px",
+      },
+      fontWeight: {
+        "section-title": "700",
+        "section-subtitle": "500",
+      },
+      colors: {
+        "main-blue": "#46DFC5",
+      },
     },
   },
   plugins: [],

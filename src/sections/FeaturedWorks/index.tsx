@@ -82,14 +82,20 @@ const FeaturedWorks: React.FC = () => {
         </motion.div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {works.map((item) => (
-            <motion.div className="flex-1 relative hover:flex-[2] overflow-hidden transition-all duration-300">
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={{ duration: 1, delay: 0.2 * item.id }}
+              className="flex-1 relative hover:flex-[2] overflow-hidden transition-all duration-300"
+            >
               <WorkCard
                 key={item.id}
                 title={item.title}
                 description={item.description}
                 cta={item.cta}
               />
-              <div className="bg-gradient-to-t z-50 absolute"></div>
             </motion.div>
           ))}
         </div>
