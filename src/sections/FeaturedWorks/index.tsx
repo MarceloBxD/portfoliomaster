@@ -5,6 +5,7 @@ import WorkCard from "@/components/WorkCard";
 import { motion } from "framer-motion";
 
 import { useApp } from "@/contexts/useContext";
+import Link from "next/link";
 
 const FeaturedWorks: React.FC = () => {
   const { setIsAboveBlackArea } = useApp();
@@ -16,6 +17,8 @@ const FeaturedWorks: React.FC = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
       cta: <button>View Github</button>,
+      githubRef: "https://github.com/MarceloBxD",
+      siteRef: "#",
     },
     {
       id: 2,
@@ -23,6 +26,8 @@ const FeaturedWorks: React.FC = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
       cta: <button>View Github</button>,
+      githubRef: "https://github.com/MarceloBxD",
+      siteRef: "#",
     },
     {
       id: 3,
@@ -30,6 +35,8 @@ const FeaturedWorks: React.FC = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
       cta: <button>View Github</button>,
+      githubRef: "https://github.com/MarceloBxD",
+      siteRef: "#",
     },
     {
       id: 4,
@@ -37,6 +44,8 @@ const FeaturedWorks: React.FC = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
       cta: <button>View Github</button>,
+      githubRef: "https://github.com/MarceloBxD",
+      siteRef: "#",
     },
   ];
 
@@ -76,25 +85,26 @@ const FeaturedWorks: React.FC = () => {
           <h2 className="text-white text-center font-eczar text-[40px]">
             Featured Works
           </h2>
-          <button className="text-white mx-auto md:mx-0 flex items-center justify-center font-work-sans text-[20px] border-4 rounded-md border-white px-10 py-6 w-[300px] h-[60px]">
-            View more on Linkedin
-          </button>
+          <Link href="https://github.com/MarceloBxD">
+            <button className="text-white mx-auto md:mx-0 flex items-center justify-center font-work-sans text-[20px] border-4 rounded-md border-white px-10 py-6 w-[300px] h-[60px]">
+              Ver mais no Github
+            </button>
+          </Link>
         </motion.div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {works.map((item) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 100 }}
-              transition={{ duration: 1, delay: 0.2 * item.id }}
               className="flex-1 relative hover:flex-[2] overflow-hidden transition-all duration-300"
             >
               <WorkCard
+                work={item.title}
                 key={item.id}
                 title={item.title}
                 description={item.description}
                 cta={item.cta}
+                githubRef={item.githubRef}
+                siteRef={item.siteRef}
               />
             </motion.div>
           ))}
