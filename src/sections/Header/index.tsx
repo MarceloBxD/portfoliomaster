@@ -14,7 +14,6 @@ const Header: React.FC = () => {
     <header className="container mx-auto md:flex text-[#1B1A19] justify-between items-center border-b-black/20">
       <div data-aos="fade-right" className="flex items-center gap-8">
         <a
-          target="_blank"
           href="/"
           className="hidden md:block uppercase font-extrabold text-[28px]"
         >

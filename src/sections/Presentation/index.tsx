@@ -4,6 +4,7 @@ import React from "react";
 
 import Lottie from "react-lottie-player";
 import lottieJson from "@/utils/lottieAnimation.json";
+import { AnchorButton } from "@/components/AnchorButton";
 
 const Presentation: React.FC = () => {
   return (
@@ -16,15 +17,8 @@ const Presentation: React.FC = () => {
           I&apos;m Marcelo Bracet, a Web Developer
         </h1>
         <div className="flex flex-col md:flex-row gap-4">
-          <a
-            href="#courses"
-            className="bg-black hover:bg-white hover:text-black hover:border-black border-2 transition-all duration-300 w-[224px] h-[60px] font-semibold rounded-md py-4 px-10 text-center  text-white"
-          >
-            View My Work
-          </a>
-          <button className="rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 ">
-            Contact Me
-          </button>
+          <AnchorButton title="View my courses" />
+          <AnchorButton inverse title="Contact Me" />
         </div>
       </div>
       <div className="mx-auto drop-shadow-lg  my-20 md:mx-0 md:my-0">

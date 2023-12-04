@@ -5,6 +5,7 @@ import React from "react";
 import { useApp } from "@/contexts/useContext";
 import Link from "next/link";
 import ItemCard from "@/components/ItemCard";
+import { AnchorButton } from "@/components/AnchorButton";
 
 const FeaturedWorks: React.FC = () => {
   const { setIsAboveBlackArea } = useApp();
@@ -51,26 +52,31 @@ const FeaturedWorks: React.FC = () => {
   ];
 
   return (
-    <section id="courses" className="py-4 bg-black/95">
+    <section id="courses" className="py-4 mt-12 bg-[#0D0D0D]">
       <div data-aos="fade-right" className="container mx-auto">
         <div className="flex-col md:flex md:flex-row py-[70px] items-center gap-[70px]">
           <h2 className="text-white text-center text-[40px]">Courses</h2>
-          <Link href="https://github.com/MarceloBxD">
-            <button className="text-white mx-auto mt-5 md:mx-0 flex items-center justify-center text-[18px] border-4 rounded-md  px-10 py-6 w-[300px] h-[60px]">
-              Ver mais no Github
-            </button>
-          </Link>
+          <div
+            className="
+           justify-center flex mt-5 md:flex"
+          >
+            <Link href="https://github.com/MarceloBxD">
+              <AnchorButton title="Ver mais no Github" />
+            </Link>
+          </div>
         </div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {courses.map((item) => (
-            <ItemCard
-              key={item.id}
-              title={item.title}
-              description={item.description}
-              siteRef={item.siteRef}
-              teacher={item.teacher}
-              img={item.img}
-            />
+            <div className="flex flex-col w-[80%] h-[350px] mx-auto">
+              <ItemCard
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                siteRef={item.siteRef}
+                teacher={item.teacher}
+                img={item.img}
+              />
+            </div>
           ))}
         </div>
       </div>

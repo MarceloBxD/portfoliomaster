@@ -34,7 +34,7 @@ export default function Home() {
       <WorkingExperience />
       {openMenu && (
         <aside
-          data-aos="fade-left"
+          data-aos="fade-in"
           className="flex flex-col overflow-hidden items-center justify-center fixed top-0 right-0 w-full h-full opacity-80 text-white bg-black/95 z-[9999]"
         >
           <CloseIcon
@@ -43,7 +43,7 @@ export default function Home() {
           />
           {navItems.map((item) => (
             <a
-              data-aos="fade-left"
+              data-aos="fade-in"
               data-aos-delay="400"
               onClick={() => setOpenMenu(false)}
               key={item.id}
