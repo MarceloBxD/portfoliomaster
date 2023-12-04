@@ -29,7 +29,6 @@ const Presentation: React.FC = () => {
       </div>
       <div className="mx-auto drop-shadow-lg  my-20 md:mx-0 md:my-0">
         <Lottie
-          loop
           animationData={lottieJson}
           play
           style={{ width: 320, height: 320 }}
