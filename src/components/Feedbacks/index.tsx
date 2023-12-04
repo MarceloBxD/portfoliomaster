@@ -8,7 +8,7 @@ const Feedbacks: React.FC = () => {
       <div className="container mx-auto py-[118px]">
         <div className="flex text-center justify-center items-center flex-col gap-2">
           <h2 className="font-semibold text-[40px] tracking-wider">
-            Some Generous Words
+            Palavras Generosas
           </h2>
           <p className="text-[20px] text-[#594F43]">
             Some of my favorite testimonials from my clients

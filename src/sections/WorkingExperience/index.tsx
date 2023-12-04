@@ -29,7 +29,7 @@ const WorkingExperience: React.FC = () => {
     <section data-aos="fade-right" className="text-center">
       <div className="container flex flex-col  gap-5 mx-auto">
         <h2 className=" tracking-wider font-section-title text-section-title">
-          Working Experience
+          Experiência de Trabalho
         </h2>
         <div className="flex flex-col gap-4 w-fit">
           {projects.map((project) => (

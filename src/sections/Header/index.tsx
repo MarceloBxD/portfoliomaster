@@ -31,7 +31,10 @@ const Header: React.FC = () => {
         <ul className="hidden list-none md:flex gap-8">
           {navItems.map((item) => (
             <a key={item.id} href={item.href}>
-              <li className="font-semibold text-[20px]" key={item.id}>
+              <li
+                className="font-semibold text-[20px] hover:translate-x-2 transition-all duration-300"
+                key={item.id}
+              >
                 {item.name}
               </li>
             </a>
