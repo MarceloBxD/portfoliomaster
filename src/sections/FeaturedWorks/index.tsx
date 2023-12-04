@@ -61,7 +61,10 @@ const FeaturedWorks: React.FC = () => {
            justify-center flex mt-5 md:flex"
           >
             <Link href="https://github.com/MarceloBxD">
-              <AnchorButton title="Ver mais no Github" />
+              <AnchorButton
+                href="https://github.com/marcelobxd"
+                title="Ver mais no Github"
+              />
             </Link>
           </div>
         </div>

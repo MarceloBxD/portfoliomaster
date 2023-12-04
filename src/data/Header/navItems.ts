@@ -6,17 +6,17 @@ export const navItems = [
   },
   {
     id: 1,
-    name: "Courses",
+    name: "Cursos",
     href: "#courses",
   },
   {
     id: 2,
-    name: "Testimonials",
+    name: "Palavras",
     href: "#feedbacks",
   },
   {
     id: 3,
-    name: "About",
+    name: "Sobre mim",
     href: "/",
   },
 ];

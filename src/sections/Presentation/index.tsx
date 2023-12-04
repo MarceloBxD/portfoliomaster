@@ -17,8 +17,8 @@ const Presentation: React.FC = () => {
           I&apos;m Marcelo Bracet, a Web Developer
         </h1>
         <div className="flex flex-col md:flex-row gap-4">
-          <AnchorButton title="View my courses" />
-          <AnchorButton inverse title="Contact Me" />
+          <AnchorButton href="#courses" title="View my courses" />
+          <AnchorButton href="#contact" inverse title="Contact Me" />
         </div>
       </div>
       <div className="mx-auto drop-shadow-lg  my-20 md:mx-0 md:my-0">

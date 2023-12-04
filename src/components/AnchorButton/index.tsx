@@ -1,11 +1,13 @@
 interface AnchorButtonProps extends React.HTMLAttributes<HTMLAnchorElement> {
   inverse?: boolean;
   title: string;
+  href: string;
 }
 
 export const AnchorButton = ({
   inverse,
   title,
+  href,
   ...props
 }: AnchorButtonProps) => {
   return (

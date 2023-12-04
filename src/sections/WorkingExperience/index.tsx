@@ -47,7 +47,7 @@ const WorkingExperience: React.FC = () => {
         </div>
 
         <button className="bg-black text-white w-[200px] mx-auto py-2 px-3 mt-10 rounded-md">
-          More info
+          Mais informações
         </button>
       </div>
     </section>
