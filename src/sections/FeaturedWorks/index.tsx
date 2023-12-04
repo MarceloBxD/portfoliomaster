@@ -70,7 +70,10 @@ const FeaturedWorks: React.FC = () => {
         </div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {courses.map((item) => (
-            <div className="flex flex-col w-[80%] h-[350px] mx-auto">
+            <div
+              key={item.id}
+              className="flex flex-col w-[80%] h-[350px] mx-auto"
+            >
               <ItemCard
                 key={item.id}
                 title={item.title}
