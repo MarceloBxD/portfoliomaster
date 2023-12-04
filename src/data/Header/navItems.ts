@@ -6,8 +6,8 @@ export const navItems = [
   },
   {
     id: 1,
-    name: "Work",
-    href: "#featuredWorks",
+    name: "Courses",
+    href: "#courses",
   },
   {
     id: 2,

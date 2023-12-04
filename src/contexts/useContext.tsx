@@ -15,32 +15,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [isAboveBlackArea, setIsAboveBlackArea] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
 
-
-  React.useEffect(() => {
-    const elementToObserve = document.getElementById("featuredWorks");
-
-    // se o elemento estiver acima da área preta, seta o estado para true
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsAboveBlackArea(false);
-          console.log("false");
-        } else {
-          setIsAboveBlackArea(true);
-          console.log("true");
-        }
-      });
-    });
-
-    // observa o elemento
-    if (elementToObserve) observer.observe(elementToObserve);
-
-    // para de observar o elemento
-    return () => {
-      if (elementToObserve) observer.unobserve(elementToObserve);
-    };
-  }, []);
-
   const value = {
     isAboveBlackArea,
     setIsAboveBlackArea,

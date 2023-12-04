@@ -1,112 +1,83 @@
 "use client";
 
 import React from "react";
-import WorkCard from "@/components/WorkCard";
-import { motion } from "framer-motion";
 
 import { useApp } from "@/contexts/useContext";
 import Link from "next/link";
+import ItemCard from "@/components/ItemCard";
 
 const FeaturedWorks: React.FC = () => {
   const { setIsAboveBlackArea } = useApp();
 
-  const works = [
+  const courses = [
     {
       id: 1,
-      title: "Work 1",
+      title: "Danki Code",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View Github</button>,
-      githubRef: "https://github.com/MarceloBxD",
-      siteRef: "#",
+        "Curso de desenvolvimento web completo, com HTML, CSS, Javascript, PHP, MySQL, WordPress, React e muito mais.",
+      date: "06/2023 - 09/2023",
+      siteRef: "https://cursos.dankicode.com/login",
+      teacher: "Guilherme Grillo",
     },
     {
       id: 2,
-      title: "Work 2",
+      title: "B7web",
+      description: "Curso de desenvolvimento Web Completo - FullStack ",
+      date: "06/2022 - 06/2023",
+      siteRef: "https://lp.b7web.com.br/fullstack",
+      teacher: "Bonieky Lacerda",
+    },
+    {
+      id: 3,
+      title: "Service Now",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View Github</button>,
-      githubRef: "https://github.com/MarceloBxD",
+      date: "06/2023 - 09/2023",
       siteRef: "#",
     },
     {
       id: 3,
-      title: "Work 3",
+      title: "Service Now",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View Github</button>,
-      githubRef: "https://github.com/MarceloBxD",
+      date: "06/2023 - 09/2023",
       siteRef: "#",
     },
     {
-      id: 4,
-      title: "Work 4",
+      id: 3,
+      title: "Service Now",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
-      cta: <button>View Github</button>,
-      githubRef: "https://github.com/MarceloBxD",
+      date: "06/2023 - 09/2023",
       siteRef: "#",
     },
   ];
 
-  React.useEffect(() => {
-    const elementToObserve = document.getElementById("featuredWorks");
-
-    // se o elemento estiver acima da área preta, seta o estado para true
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsAboveBlackArea(false);
-        } else {
-          setIsAboveBlackArea(true);
-        }
-      });
-    });
-
-    // observa o elemento
-    if (elementToObserve) observer.observe(elementToObserve);
-
-    // para de observar o elemento
-    return () => {
-      if (elementToObserve) observer.unobserve(elementToObserve);
-    };
-  }, [setIsAboveBlackArea]);
-
   return (
-    <section id="featuredWorks" className="py-4 bg-black/95">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="flex-col  md:flex md:flex-row py-[70px] items-center gap-[69px]"
-        >
-          <h2 className="text-white text-center font-eczar text-[40px]">
-            Featured Works
-          </h2>
+    <section id="courses" className="py-4 bg-black/95">
+      <div data-aos="fade-right" className="container mx-auto">
+        <div className="flex-col md:flex md:flex-row py-[70px] items-center gap-[70px]">
+          <h2 className="text-white text-center text-[40px]">Courses</h2>
           <Link href="https://github.com/MarceloBxD">
-            <button className="text-white mx-auto md:mx-0 flex items-center justify-center font-work-sans text-[20px] border-4 rounded-md border-white px-10 py-6 w-[300px] h-[60px]">
+            <button className="text-white mx-auto mt-5 md:mx-0 flex items-center justify-center text-[18px] border-4 rounded-md border-white px-10 py-6 w-[300px] h-[60px]">
               Ver mais no Github
             </button>
           </Link>
-        </motion.div>
+        </div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
-          {works.map((item) => (
-            <motion.div
+          {courses.map((item) => (
+            <div
+              data-aos="fade-right"
               key={item.id}
-              className="flex-1 relative hover:flex-[2] overflow-hidden transition-all duration-300"
+              className="flex-1 relative mt-3 hover:flex-[2]  transition-all duration-300"
             >
-              <WorkCard
-                work={item.title}
+              <ItemCard
                 key={item.id}
                 title={item.title}
                 description={item.description}
-                cta={item.cta}
-                githubRef={item.githubRef}
                 siteRef={item.siteRef}
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

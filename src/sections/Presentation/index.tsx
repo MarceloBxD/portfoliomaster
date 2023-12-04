@@ -2,54 +2,30 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import lottieJson from "@/utils/lottieAnimation.json";
 
 const Presentation: React.FC = () => {
   return (
-    <section className="flex container mx-auto flex-col mt-24 md:mt-32 md:flex-row">
+    <section
+      data-aos="fade-right"
+      className="flex container mx-auto flex-col mt-24 md:mt-32 md:flex-row"
+    >
       <div className="flex items-center justify-center md:items-start flex-col gap-10">
-        <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="text-2xl text-center md:text-left md:text-4xl max-w-[70%] lg:text-6xl font-semibold"
-        >
+        <h1 className="text-2xl text-center md:text-left md:text-4xl max-w-[70%] lg:text-6xl font-semibold">
           I&apos;m Marcelo Bracet, a Web Developer
-        </motion.h1>
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="flex flex-col md:flex-row gap-4"
-        >
-          <motion.a
-            whileHover={{
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-            href="#featuredWorks"
-            className="bg-black w-[224px] h-[60px] font-semibold rounded-md py-4 px-10 text-center font-work-sans text-white"
+        </h1>
+        <div className="flex flex-col md:flex-row gap-4">
+          <a
+            href="#courses"
+            className="bg-black hover:bg-white hover:text-black hover:border-black border-2 transition-all duration-300 w-[224px] h-[60px] font-semibold rounded-md py-4 px-10 text-center  text-white"
           >
             View My Work
-          </motion.a>
-          <motion.button
-            whileHover={{
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-            className="rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 "
-          >
+          </a>
+          <button className="rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 ">
             Contact Me
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
       <div className="mx-auto drop-shadow-lg  my-20 md:mx-0 md:my-0">
         <Lottie
