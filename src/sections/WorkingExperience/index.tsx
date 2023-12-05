@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 
+const Iframe = ({ src }: { src: string }) => {
+  return <iframe className=" w-full h-[500px]" src={src}></iframe>;
+};
+
 const WorkingExperience: React.FC = () => {
   const [active, setActive] = useState<number | null>(0);
 
@@ -54,26 +58,9 @@ const WorkingExperience: React.FC = () => {
               Fechar Visualização
             </button>
           )}
-          {active === 1 && (
-            <div className="w-full h-[500px]" style={{ overflow: "hidden" }}>
-              <iframe
-                className=" w-full h-[500px]"
-                src="https://www.farobeachclub.com.br"
-              ></iframe>
-            </div>
-          )}
-          {active === 2 && (
-            <iframe
-              className=" w-full h-[500px]"
-              src="https://www.cblconsultoria.com.br"
-            ></iframe>
-          )}
-          {active === 3 && (
-            <iframe
-              className=" w-full h-[500px]"
-              src="https://www.majorssolutions.com.br"
-            ></iframe>
-          )}
+          {active === 1 && <Iframe src="https://www.farobeachclub.com.br" />}
+          {active === 2 && <Iframe src="https://www.cblconsultoria.com.br" />}
+          {active === 3 && <Iframe src="https://www.majorssolutions.com.br" />}
         </div>
       </div>
     </section>

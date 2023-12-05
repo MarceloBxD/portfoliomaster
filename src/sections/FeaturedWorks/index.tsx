@@ -5,6 +5,12 @@ import React from "react";
 import Link from "next/link";
 import ItemCard from "@/components/ItemCard";
 import { AnchorButton } from "@/components/AnchorButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const FeaturedWorks: React.FC = () => {
   const courses = [
@@ -49,21 +55,10 @@ const FeaturedWorks: React.FC = () => {
   ];
 
   return (
-    <section id="courses" className="py-4 mt-12 bg-[#0D0D0D]">
+    <section id="courses" className="py-4 mt-12 ">
       <div data-aos="fade-right" className="container mx-auto">
-        <div className="flex-col md:flex md:flex-row py-[70px] items-center gap-[70px]">
-          <h2 className="text-white text-center text-[40px]">Cursos</h2>
-          <div
-            className="
-           justify-center flex mt-5 md:flex"
-          >
-            <AnchorButton
-              href="https://github.com/marcelobxd"
-              title="Ver mais no Github"
-            />
-          </div>
-        </div>
-        <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">
+        <div className="flex-col md:flex md:flex-row items-center gap-[70px]"></div>
+        <div className="flex-col hidden md:flex md:flex-row md:h-[20rem] w-full gap-3">
           {courses.map((item) => (
             <div
               key={item.id}
@@ -79,6 +74,32 @@ const FeaturedWorks: React.FC = () => {
               />
             </div>
           ))}
+        </div>
+        <h1 className="md:hidden text-center font-bold text-2xl">
+          Cursos Realizados
+        </h1>
+        <div className="md:hidden flex py-4 justify-center">
+          <Swiper
+            modules={[Pagination, Scrollbar, A11y, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+          >
+            {courses.map((item) => (
+              <SwiperSlide key={item.id}>
+                <ItemCard
+                  key={item.id}
+                  title={item.title}
+                  description={item.description}
+                  siteRef={item.siteRef}
+                  teacher={item.teacher}
+                  img={item.img}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
