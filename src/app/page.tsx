@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Feedbacks from "@/components/Feedbacks";
 import FeaturedWorks from "@/sections/FeaturedWorks";
 import Header from "@/sections/Header";
 import Presentation from "@/sections/Presentation";
@@ -30,7 +29,6 @@ export default function Home() {
       <Header />
       <Presentation />
       <FeaturedWorks />
-      <Feedbacks />
       <WorkingExperience />
       {openMenu && (
         <aside

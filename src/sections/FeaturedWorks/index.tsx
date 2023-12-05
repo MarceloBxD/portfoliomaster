@@ -2,14 +2,11 @@
 
 import React from "react";
 
-import { useApp } from "@/contexts/useContext";
 import Link from "next/link";
 import ItemCard from "@/components/ItemCard";
 import { AnchorButton } from "@/components/AnchorButton";
 
 const FeaturedWorks: React.FC = () => {
-  const { setIsAboveBlackArea } = useApp();
-
   const courses = [
     {
       id: 1,
@@ -55,17 +52,15 @@ const FeaturedWorks: React.FC = () => {
     <section id="courses" className="py-4 mt-12 bg-[#0D0D0D]">
       <div data-aos="fade-right" className="container mx-auto">
         <div className="flex-col md:flex md:flex-row py-[70px] items-center gap-[70px]">
-          <h2 className="text-white text-center text-[40px]">Courses</h2>
+          <h2 className="text-white text-center text-[40px]">Cursos</h2>
           <div
             className="
            justify-center flex mt-5 md:flex"
           >
-            <Link href="https://github.com/MarceloBxD">
-              <AnchorButton
-                href="https://github.com/marcelobxd"
-                title="Ver mais no Github"
-              />
-            </Link>
+            <AnchorButton
+              href="https://github.com/marcelobxd"
+              title="Ver mais no Github"
+            />
           </div>
         </div>
         <div className="flex-col md:flex md:flex-row md:h-[20rem] w-full gap-3">

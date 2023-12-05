@@ -13,7 +13,7 @@ export const AnchorButton = ({
   return (
     <a
       {...props}
-      href="#courses"
+      href={href}
       className={
         inverse
           ? "flex text-sm justify-center items-center rounded-md w-[224px] h-[60px] border border-solid border-black font-semibold py-4 px-10 "

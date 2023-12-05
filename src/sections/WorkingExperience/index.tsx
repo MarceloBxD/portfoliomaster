@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 const WorkingExperience: React.FC = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(0);
 
   const projects = [
     {
@@ -20,18 +20,18 @@ const WorkingExperience: React.FC = () => {
     },
     {
       id: 3,
-      title: "Projeto Python",
-      description: "Desenvolvimento de um projeto em Python para um cliente.",
+      title: "Majors Solutions",
+      description: "Agência criada para desenvolvimento de sites e apps",
     },
   ];
 
   return (
     <section data-aos="fade-right" className="text-center">
       <div className="container flex flex-col  gap-5 mx-auto">
-        <h2 className=" tracking-wider font-section-title text-section-title">
+        <h2 className="mt-12 tracking-wider font-section-title text-section-title">
           Experiência de Trabalho
         </h2>
-        <div className="flex flex-col gap-4 w-fit">
+        <div className="flex flex-col gap-4 w-fit mt-4">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -45,10 +45,36 @@ const WorkingExperience: React.FC = () => {
             </div>
           ))}
         </div>
-
-        <button className="bg-black text-white w-[200px] mx-auto py-2 px-3 mt-10 rounded-md">
-          Mais informações
-        </button>
+        <div>
+          {active && (
+            <button
+              onClick={() => setActive(null)}
+              className="bg-main-blue mx-auto my-4 text-white py-2 px-6 rounded-md uppercase"
+            >
+              Fechar Visualização
+            </button>
+          )}
+          {active === 1 && (
+            <div className="w-full h-[500px]" style={{ overflow: "hidden" }}>
+              <iframe
+                className=" w-full h-[500px]"
+                src="https://www.farobeachclub.com.br"
+              ></iframe>
+            </div>
+          )}
+          {active === 2 && (
+            <iframe
+              className=" w-full h-[500px]"
+              src="https://www.cblconsultoria.com.br"
+            ></iframe>
+          )}
+          {active === 3 && (
+            <iframe
+              className=" w-full h-[500px]"
+              src="https://www.majorssolutions.com.br"
+            ></iframe>
+          )}
+        </div>
       </div>
     </section>
   );
